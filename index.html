@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="دليل تفاعلي لأدوار صناعة الإعلانات في مصر · An interactive guide to advertising industry roles in Egypt">
+<title>خريطة صناعة الإعلانات · Ad Industry Map</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;500&family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: film-strip rail of three "houses"; one accent (clapper amber) for interaction; everything else ink + paper. */
+:root{
+  --bg:#f6f4ef; --paper:#ffffff; --ink:#1d1b17; --ink2:#5b574f; --line:#dedad0;
+  --accent:#d9731d; --accent-ink:#7a3d08; --accent-soft:#fbead8;
+  --agency:#6c5ce7; --agency-soft:#efecfd; --prod:#0f8a6b; --prod-soft:#e1f4ee; --post:#c44a3a; --post-soft:#fbe7e3; --ext:#7a7670; --ext-soft:#eeece6;
+  --font-head:"Cairo","Space Grotesk",system-ui,sans-serif; --font-body:"IBM Plex Sans Arabic","Inter",system-ui,sans-serif;
+}
+:root[lang="en"]{--font-head:"Space Grotesk","Cairo",system-ui,sans-serif;--font-body:"Inter","IBM Plex Sans Arabic",system-ui,sans-serif}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#15140f; --paper:#1f1d17; --ink:#f1ede4; --ink2:#b3ada0; --line:#36332b;
+  --accent:#f0913a; --accent-ink:#ffd9b3; --accent-soft:#3a2614;
+  --agency:#a89bff; --agency-soft:#2a2642; --prod:#4fcfa7; --prod-soft:#143329; --post:#ff8a78; --post-soft:#3d1f1a; --ext:#b0aba0; --ext-soft:#2a2822; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#15140f; --paper:#1f1d17; --ink:#f1ede4; --ink2:#b3ada0; --line:#36332b;
+  --accent:#f0913a; --accent-ink:#ffd9b3; --accent-soft:#3a2614;
+  --agency:#a89bff; --agency-soft:#2a2642; --prod:#4fcfa7; --prod-soft:#143329; --post:#ff8a78; --post-soft:#3d1f1a; --ext:#b0aba0; --ext-soft:#2a2822; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.8;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-block:16px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--font-head);line-height:1.3;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,5vw,44px);font-weight:800}
+h2{font-size:24px;font-weight:800;margin-bottom:6px}
+h3{font-size:17px;font-weight:600}
+p{margin:0}
+.lead{color:var(--ink2);max-width:62ch;margin-top:8px}
+.eyebrow{font-size:12px;letter-spacing:.06em;color:var(--accent-ink);background:var(--accent-soft);display:inline-block;padding:2px 10px;border-radius:999px;font-weight:600}
+section{margin-top:56px}
+.sec-head{margin-bottom:18px}
+.bar{display:flex;justify-content:flex-end;gap:8px;margin-bottom:18px}
+.sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper)}
+.sw button{font:inherit;font-size:13px;padding:5px 12px;border:none;background:transparent;color:var(--ink2);cursor:pointer}
+.sw button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.sw button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+nav.top{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+nav.top a{text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--paper);padding:6px 12px;border-radius:999px;font-size:14px}
+nav.top a:hover,nav.top a:focus-visible{border-color:var(--accent);outline:none}
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch;overflow-x:auto;padding-bottom:4px}
+.jstep{position:relative;padding:14px 10px 12px;text-align:center;cursor:pointer;border:1px solid var(--line);background:var(--paper);min-width:0;font:inherit;color:inherit}
+.jstep:first-child{border-start-start-radius:12px;border-end-start-radius:12px}.jstep:last-child{border-start-end-radius:12px;border-end-end-radius:12px}
+.jstep+.jstep{border-inline-start:none}
+.jstep .n{font-family:var(--font-head);font-weight:800;font-size:13px;color:var(--ink2)}
+.jstep .t{font-family:var(--font-head);font-weight:600;font-size:15px;margin-top:2px}
+.jstep .s{font-size:12px;color:var(--ink2)}
+.jstep[aria-selected="true"]{background:var(--accent-soft);border-color:var(--accent)}
+.jstep:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.jbody{margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.jbody h3{margin-bottom:6px}
+.jbody ul{margin:8px 0 0;padding-inline-start:22px;color:var(--ink2)}
+@media (max-width:560px){.journey{grid-template-columns:1fr 1fr;gap:8px}.jstep{border-radius:10px!important;border:1px solid var(--line)!important}}
+.houses{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:760px){.houses{grid-template-columns:1fr}}
+.house{border-radius:14px;padding:16px;border:1px solid var(--line);background:var(--paper);border-top:5px solid var(--hc)}
+.house h3{display:flex;align-items:baseline;gap:8px;font-size:19px;font-weight:800;flex-wrap:wrap}
+.house h3 small{font-size:12px;color:var(--ink2);font-weight:400;font-family:var(--font-body)}
+.house .what{font-size:13px;color:var(--ink2);margin:4px 0 12px}
+.chips{display:flex;flex-direction:column;gap:6px}
+.chip{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;text-align:start;padding:9px 12px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:14px;cursor:pointer}
+.chip b{font-family:var(--font-head);font-weight:600}
+.chip .ab{font-size:11px;color:var(--ink2);font-family:var(--font-body);letter-spacing:.03em;white-space:nowrap}
+.chip:hover,.chip:focus-visible{border-color:var(--hc);outline:none;background:var(--hs)}
+.chip[aria-pressed="true"]{border-color:var(--hc);background:var(--hs);box-shadow:inset 3px 0 0 var(--hc)}
+.chip.ext{border-style:dashed}
+.client{margin-bottom:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.client .cbox{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:10px 16px;font-family:var(--font-head);font-weight:600}
+.client .arrow{color:var(--ink2);font-size:14px}
+.detail{margin-top:18px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 22px;border-inline-start:6px solid var(--dc,var(--accent))}
+.detail .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.detail .tag{font-size:12px;color:var(--ink2)}
+.detail h3{font-size:22px;font-weight:800}
+.detail .en{font-family:var(--font-body);color:var(--ink2);font-size:14px}
+.detail .grid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-top:14px}
+@media (max-width:700px){.detail .grid{grid-template-columns:1fr}}
+.detail ul{margin:6px 0 0;padding-inline-start:20px}
+.detail li{margin-bottom:4px}
+.kv{display:flex;flex-direction:column;gap:10px}
+.kv div{background:var(--bg);border-radius:10px;padding:10px 12px;font-size:14px}
+.kv .k{font-family:var(--font-head);font-weight:600;font-size:13px;color:var(--ink2);display:block}
+.ladder{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
+.ladder span{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.ladder .cur{border-color:var(--dc);font-weight:600}
+.ladder i{color:var(--ink2);font-style:normal}
+.tip{margin-top:14px;background:var(--accent-soft);color:var(--accent-ink);border-radius:10px;padding:10px 14px;font-size:14px}
+.tip b{font-family:var(--font-head)}
+.empty{color:var(--ink2);text-align:center;padding:14px}
+.rels{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.rel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.rel .pair{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-weight:600;font-size:15px;flex-wrap:wrap}
+.rel .pair .dot{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--pc)}
+.rel .pair .ar{color:var(--ink2);font-weight:400}
+.rel p{font-size:14px;color:var(--ink2);margin-top:6px}
+.search{width:100%;padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-size:15px;margin-bottom:12px}
+.search:focus-visible{outline:2px solid var(--accent)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:10px 14px;text-align:start;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--font-head);font-weight:600;font-size:13px;color:var(--ink2);background:var(--bg)}
+tr:last-child td{border-bottom:none}
+td.ab{font-family:var(--font-body);font-weight:500;white-space:nowrap;direction:ltr;text-align:start}
+.pill{display:inline-block;font-size:11px;padding:1px 8px;border-radius:999px;background:var(--ext-soft);color:var(--ink2);margin-inline-start:6px}
+.pill.a{background:var(--agency-soft);color:var(--agency)}.pill.p{background:var(--prod-soft);color:var(--prod)}.pill.o{background:var(--post-soft);color:var(--post)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card h3{margin-bottom:6px}
+.card p,.card li{font-size:14px;color:var(--ink2)}
+.card ul{margin:6px 0 0;padding-inline-start:20px}
+.credits{font-family:"Inter","IBM Plex Sans Arabic",system-ui,sans-serif;font-size:13px;background:var(--bg);border-radius:8px;padding:10px 12px;direction:ltr;text-align:left;line-height:1.7;margin-top:8px;overflow-x:auto}
+.credits span{color:var(--accent-ink);background:var(--accent-soft);border-radius:4px;padding:0 4px}
+.paths{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.path{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;border-top:4px solid var(--pc)}
+.path h3{font-size:16px}
+.path ol{margin:8px 0 0;padding-inline-start:20px;font-size:14px}
+.path li{margin-bottom:2px}
+.path .yrs{font-size:12px;color:var(--ink2)}
+.quiz{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.q{margin-bottom:18px}
+.q .qt{font-family:var(--font-head);font-weight:600;margin-bottom:8px}
+.opts{display:flex;flex-direction:column;gap:6px}
+.opt{text-align:start;padding:9px 12px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:14px;cursor:pointer}
+.opt:hover,.opt:focus-visible{border-color:var(--accent);outline:none}
+.opt.ok{border-color:var(--prod);background:var(--prod-soft)}
+.opt.no{border-color:var(--post);background:var(--post-soft)}
+.fb{font-size:13px;color:var(--ink2);margin-top:6px;min-height:1.6em}
+.score{font-family:var(--font-head);font-weight:800;font-size:18px;margin-top:6px}
+.term{text-decoration:underline dotted var(--accent);text-decoration-thickness:1.5px;text-underline-offset:3px;cursor:help;border-radius:3px}
+.term:hover,.term:focus-visible,.term.on{background:var(--accent-soft);color:var(--accent-ink);outline:none}
+.chip .ab.term{text-decoration-color:var(--ink2)}
+#tip{position:absolute;z-index:50;max-width:min(320px,calc(100vw - 32px));background:var(--ink);color:var(--bg);border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.7;box-shadow:0 6px 20px rgba(0,0,0,.18);pointer-events:none;text-align:start}
+#tip[hidden]{display:none}
+#tip .h{font-family:var(--font-head);font-weight:600;font-size:14px;display:flex;gap:6px;flex-wrap:wrap;align-items:baseline}
+#tip .h .en{direction:ltr;unicode-bidi:isolate;font-family:var(--font-body);opacity:.85;font-size:13px}
+#tip .x{opacity:.9;margin-top:2px}
+.hint{font-size:13px;color:var(--ink2);margin-top:6px}
+footer{margin-top:48px;color:var(--ink2);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (prefers-reduced-motion:no-preference){.detail{animation:in .25s ease}.chip,.opt,.jstep{transition:background .15s,border-color .15s}}
+@keyframes in{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap" id="wrap" dir="rtl">
+<div class="bar">
+  <div class="sw" role="group" aria-label="Language"><button id="langAr" aria-pressed="true">عربي</button><button id="langEn" aria-pressed="false">English</button></div>
+  <div class="sw" role="group" aria-label="Theme"><button id="thLight" aria-pressed="false">☀</button><button id="thAuto" aria-pressed="true">Auto</button><button id="thDark" aria-pressed="false">☾</button></div>
+</div>
+<header id="hdr"></header>
+<section id="journey"><div class="sec-head" id="jhead"></div><div class="journey" role="tablist" id="jsteps"></div><div class="jbody" id="jbody"></div></section>
+<section id="map"><div class="sec-head" id="mhead"></div><div class="client" id="client"></div><div class="houses" id="houses"></div><div class="detail" id="detail"></div></section>
+<section id="rels"><div class="sec-head" id="rhead"></div><div class="rels" id="relsBody"></div></section>
+<section id="abbr"><div class="sec-head" id="ahead"></div><input class="search" id="abbrSearch" type="search" aria-label="search"><div class="tbl"><table id="abbrTable"><thead><tr id="abbrHead"></tr></thead><tbody></tbody></table></div></section>
+<section id="egypt"><div class="sec-head" id="ehead"></div><div class="cards" id="ecards"></div></section>
+<section id="paths"><div class="sec-head" id="phead"></div><div class="paths" id="pathsBody"></div><div class="tip" id="ptip"></div></section>
+<section id="quiz"><div class="sec-head" id="qhead"></div><div class="quiz" id="quizBody"></div></section>
+<div id="tip" role="tooltip" hidden></div>
+<footer id="foot"></footer>
+</div>
+
+<script>
+let lang='ar';
+const t=v=>Array.isArray(v)?v[lang==='ar'?0:1]:v;
+/* ---------- UI strings [ar,en] ---------- */
+const UI={
+ eyebrow:["دليل مبسّط للمبتدئين","A plain guide for beginners"],
+ title:["خريطة صناعة الإعلانات","The Ad Industry Map"],
+ lead:["مين بيعمل إيه، ومين بيتعامل مع مين، من لحظة ما العميل يقول \"عايز إعلان\" لحد ما الإعلان يظهر على الشاشة. اضغط على أي بوزيشن عشان تفهم دوره، وفي الآخر فيه اختبار سريع.","Who does what, and who talks to whom, from the moment a client says \"I want an ad\" until it airs. Click any position to see its role, and take the short quiz at the end."],
+ hint:["أي كلمة تحتها خط منقّط (زي {T}) قف عليها بالماوس أو اضغط عليها من الموبايل وهيظهر معناها بالعربي والإنجليزي.","Any word with a dotted underline (like {T}) shows its meaning in English and Arabic when you hover, or tap it on a phone."],
+ hintTerm:["الإنسايت","insight"],
+ nav:[["رحلة الإعلان","الخريطة التفاعلية","مين مع مين","الاختصارات","السوق المصري","طرق الدخول","اختبر نفسك"],["The journey","Interactive map","Who works with whom","Abbreviations","Egyptian market","Career paths","Quiz"]],
+ jTitle:["رحلة الإعلان في 5 محطات","The ad's journey in 5 stops"],jLead:["الإعلان بيعدي على 3 بيوت مختلفة قبل ما يوصلك. اضغط على كل محطة.","An ad passes through three different houses before it reaches you. Click each stop."],
+ mTitle:["الخريطة التفاعلية","Interactive map"],mLead:["كل بيت له لون. اضغط على أي بوزيشن تحت وهيظهر لك شرحه، سلّمه الوظيفي، ومين بيتعامل معاه.","Each house has a color. Click any position to see what it does, its career ladder, and who it works with."],
+ client:["العميل (Client)","Client"],clientArrow:["← بيدي البريف للوكالة ↓","→ hands the brief to the agency ↓"],
+ empty:["اختار بوزيشن من فوق عشان تشوف تفاصيله.","Pick a position above to see its details."],
+ does:["بيعمل إيه بالظبط","What they actually do"],forYou:["ليك انت:","For you:"],withK:["بيتعامل مع","Works with"],ladderK:["السلّم الوظيفي","Career ladder"],diffK:["فرق مهم","Key distinction"],extTag:["مورد خارجي","external vendor"],
+ rTitle:["مين بيتعامل مع مين؟","Who works with whom?"],rLead:["خطوط الوصل الأساسية بين البيوت التلاتة. اللون بيقول البوزيشن تبع أنهي بيت.","The main lines between the three houses. The color shows which house a position belongs to."],
+ aTitle:["الاختصارات اللي هتقابلها في الـ credits","Abbreviations you'll meet in the credits"],aLead:["لما تقرا credits حملة على Ads of the World، دي المفاتيح. اكتب أي حرف للبحث.","When you read a campaign's credits on Ads of the World, these are the keys. Type to search."],
+ aPh:["ابحث: DOP، EP، كوبي...","Search: DOP, EP, copy..."],aCols:[["الاختصار","المعنى","يعني إيه بالبلدي"],["Abbreviation","Stands for","In plain words"]],aNone:["مفيش نتيجة. جرّب كلمة تانية.","No match. Try another word."],
+ pills:[{a:"وكالة",p:"إنتاج",o:"post"},{a:"agency",p:"production",o:"post"}],
+ eTitle:["السوق المصري بالذات","The Egyptian market"],eLead:["نفس الأدوار، بس فيه ألقاب عربية وأسماء لازم تعرفها.","Same roles, but with Arabic titles and local names you should know."],
+ pTitle:["طرق الدخول والسلالم الوظيفية","Ways in and career ladders"],pLead:["كل بيت له سلّم. اختار الطريق اللي يوصّلك للبوكس اللي عايزه.","Each house has a ladder. Pick the path that leads to the box you want."],
+ pTip:["<b>لو جاي من سيلز أو خدمة عملاء:</b> أسهل باب تدخل منه الوكالة هو الأكونت، لأن المهارات نفسها (فهم العميل، التفاوض، الإقناع). بس لو هدفك Creative Director، الطريق المباشر هو الكوبي رايتينج: ابنِ بورتفوليو من 6 إلى 8 حملات وهمية لبراندات مصرية وادخل كـ Junior Copywriter. ومع ذلك، مهارة بيع الفكرة للعميل هتفضل سبقك في الاتنين.","<b>Coming from sales or customer service?</b> The easiest door into an agency is account management, because the skills are the same (reading the client, negotiating, persuading). But if your goal is Creative Director, the direct route is copywriting: build a portfolio of 6 to 8 spec campaigns for Egyptian brands and enter as a Junior Copywriter. Either way, selling an idea to a client will stay your edge."],
+ qTitle:["اختبر نفسك","Test yourself"],qLead:["6 أسئلة سريعة. الإجابة بتظهر فورًا.","6 quick questions. Answers show instantly."],
+ ok:["صح. ","Correct. "],no:["مش صح. ","Not quite. "],score:["النتيجة","Score"],of:["من","of"],
+ s3:[" . انت فاهم الخريطة كلها."," . You know the whole map."],s2:[" . كويس جدًا، راجع اللي غلطت فيه من الخريطة."," . Very good. Review the ones you missed on the map."],s1:[" . ارجع للخريطة التفاعلية واضغط على كل بوزيشن تاني."," . Go back to the interactive map and click each position again."],
+ foot:["مبني من محادثة تعليمية عن أدوار صناعة الإعلانات في مصر. الأسماء المذكورة من credits حملات منشورة علنًا على Ads of the World و Campaign Middle East.","Built from a learning conversation about advertising roles in Egypt. Company names come from publicly posted campaign credits on Ads of the World and Campaign Middle East."],
+ posNote:["بوزيشن. اضغط عليه في الخريطة التفاعلية لتفاصيل أكتر.","A position. Click it on the interactive map for details."]
+};
+/* ---------- houses ---------- */
+const HOUSES={
+ agency:{name:["الوكالة الإعلانية","Creative agency"],en:["Creative Agency","بيت الفكرة"],what:["بيت الفكرة. بتستلم البريف من العميل وتطلّع الفكرة والسكريبت.","The house of the idea. Takes the brief from the client and produces the idea and script."],c:"var(--agency)",s:"var(--agency-soft)"},
+ prod:{name:["شركة الإنتاج","Production house"],en:["Production House","بيت التصوير"],what:["بيت التصوير. بتاخد السكريبت وتحوّله لمادة مصورة.","The house of the shoot. Takes the script and turns it into footage."],c:"var(--prod)",s:"var(--prod-soft)"},
+ post:{name:["شركة ما بعد الإنتاج","Post house"],en:["Post House","بيت التشطيب"],what:["بيت التشطيب. مونتاج، ألوان، صوت، جرافيكس، وبعدين الإعلان النهائي.","The finishing house. Edit, color, sound, graphics, then the final ad."],c:"var(--post)",s:"var(--post-soft)"}
+};
+/* ---------- positions ---------- */
+const P=[
+ {id:"md",h:"agency",ab:"MD",name:"Managing Director",ar:["المدير العام","Managing Director"],short:["بيدير الوكالة كبيزنس","Runs the agency as a business"],
+  does:[["الأرقام: الإيرادات والمصاريف والأرباح، الوكالة كسبانة ولا خسرانة.","The numbers: revenue, costs, profit. Is the agency making money?"],["بيجيب العملاء الكبار وبيتدخل لما عميل مهم زعلان.","Wins big clients and steps in when an important client is unhappy."],["بيعيّن ويقيل المديرين اللي تحته وبيحدد هيكل الشركة.","Hires and fires the directors below and sets the company structure."],["بيحدد الاتجاه: توسع في الديجيتال؟ فرع جديد؟ قطاع جديد؟","Sets direction: expand into digital? a new branch? a new sector?"],["وش الشركة قدام السوق والصحافة والشبكة العالمية.","The face of the agency to the market, the press and the global network."]],
+  with:["كل مديري الأقسام (CD، Client Services، Strategy) والعملاء الكبار","All department heads (CD, Client Services, Strategy) and the big clients"],
+  ladder:["Account Director","Client Services Director","Managing Director","CEO / Partner"],cur:2,
+  diff:["الـ CD مسؤول عن جودة الشغل. الـ MD مسؤول عن صحة الشركة. الاتنين على نفس المستوى تقريبًا بس الـ MD هو اللي بيوقّع في الآخر.","The CD is responsible for the quality of the work. The MD is responsible for the health of the company. Roughly the same level, but the MD signs last."],
+  tip:["بيطلع غالبًا من الأكونت أو الاستراتيجي مش من الكرييتيف، إلا لو فتح وكالته بنفسه.","Usually comes from account or strategy, not creative, unless they founded their own agency."]},
+ {id:"am",h:"agency",ab:"Acc",name:"Account Manager",ar:["مدير الحساب","Account Manager"],short:["صوت العميل جوه الوكالة","The client's voice inside the agency"],
+  does:[["بياخد البريف من العميل: الهدف، الجمهور، الميزانية، المعاد، وبيكتبه في Creative Brief.","Takes the brief from the client: goal, audience, budget, deadline, and writes it up as a creative brief."],["بيقدّم الأفكار للعميل (غالبًا مع الـ CD) وبيدافع عنها.","Presents the ideas to the client (usually with the CD) and defends them."],["بيرجّع الفيدباك للكرييتيف، والشاطر بيفلتره عشان يحمي الفكرة.","Brings feedback back to creative; a good one filters it to protect the idea."],["بيدير الوقت والفلوس والفواتير، وبيحاول يجيب شغل أكتر من نفس العميل.","Manages time, money and invoices, and tries to grow the account."],["بيبني العلاقة: العميل المبسوط بيرجع تاني.","Builds the relationship: a happy client comes back."]],
+  with:["العميل من ناحية، والكرييتيف تيم من الناحية التانية","The client on one side, the creative team on the other"],
+  ladder:["Account Executive","Account Manager","Account Director","Client Services Director"],cur:1,
+  diff:["فيه شد وجذب دايم بين الأكونت والكرييتيف: الأكونت عايز يرضي العميل بسرعة، والكرييتيف عايز يحمي الفكرة. الـ CD الشاطر بيشتغل مع الأكونت مش ضده.","There is a constant tug of war between account and creative: account wants to please the client fast, creative wants to protect the idea. A good CD works with account, not against it."],
+  tip:["أسهل باب دخول لو جاي من سيلز أو خدمة عملاء. بس الأكونت الشاطر بيتحبس في الأكونت، فلو عايز كرييتيف خد بالك.","The easiest door if you come from sales or customer service. But a good account person tends to get stuck in account, so be careful if you want creative."]},
+ {id:"cd",h:"agency",ab:"CD / Crtv",name:"Creative Director",ar:["المدير الإبداعي","Creative Director"],short:["صاحب الفكرة والقرار الإبداعي","Owns the idea and the creative call"],
+  does:[["بيفكر استراتيجي الأول: الإنسايت، الـ positioning، الـ big idea، وبعدين التنفيذ.","Thinks strategically first: the insight, the positioning, the big idea, then the execution."],["بيراجع كل شغل الكوبي والآرت وبيقول: ده يمشي، ده لأ.","Reviews all copy and art work and decides what goes and what doesn't."],["بيبيع الفكرة للعميل في العروض الكبيرة.","Sells the idea to the client in the big presentations."],["بيقعد في الـ pre-production مع شركة الإنتاج ويراجع الـ bidding بتاع 3 شركات إنتاج.","Sits in pre-production with the production house and reviews the bidding from three production houses."],["بيحضر التصوير وبيقعد في المونتاج، لأن الفكرة ممكن تتعدل تمامًا على ترابيزة المونتاج.","Attends the shoot and sits in the edit, because the idea can change completely on the editing table."]],
+  with:["الكوبي والآرت تحته، الأكونت والـ MD جنبه، المخرج والمونتير برّه","Copy and art below, account and the MD beside, the director and editor outside"],
+  ladder:["Junior Copywriter / Art Director","Senior","Associate CD (ACD)","Creative Director","ECD"],cur:3,
+  diff:["فيه لقب مركّب اسمه Creative & Operations Director في الوكالات الصغيرة: واحد ماسك الإبداع وإدارة التشغيل (الناس، الجداول، الموردين) في نفس الوقت. ده أعلى من الـ CD العادي.","Smaller agencies have a combined title, Creative & Operations Director: one person holding both creative and operations (people, schedules, vendors). That sits above a regular CD."],
+  tip:["ده هدفك. معظم الناس بتاخد 7 إلى 10 سنين توصل له، بس مستوى محترم في طلوع الأفكار وتنفيذها ممكن في سنة ونص لسنتين لو اشتغلت صح.","This is your target. Most people take 7 to 10 years to get here, but a solid level of generating and executing ideas is reachable in 18 to 24 months of real work."]},
+ {id:"cw",h:"agency",ab:"CW + AD",name:"Copywriter + Art Director",ar:["الكوبي رايتر والآرت دايركتور","Copywriter + Art Director"],short:["الفريق اللي بيكتب ويصمم الفكرة","The pair that writes and designs the idea"],
+  does:[["الكوبي رايتر: الكلمة والفكرة، السكريبت، الهيدلاين، الفويس أوفر.","Copywriter: the word and the idea, the script, the headline, the voice over."],["الآرت دايركتور: الصورة والفكرة، اللوك، الـ layout، الـ storyboard.","Art director: the image and the idea, the look, the layout, the storyboard."],["بيشتغلوا اتنين اتنين على نفس البريف، وبيطلّعوا أفكار كتير والـ CD بيختار.","They work as a pair on the same brief, generate many ideas, and the CD picks."],["بيعملوا mockups عشان يبيعوا الفكرة (Canva، CapCut، أدوات AI كفاية في البداية).","They make mockups to sell the idea (Canva, CapCut and AI tools are enough at first)."]],
+  with:["الـ CD فوقهم، والأكونت بيجيبلهم البريف","The CD above them, and account brings them the brief"],
+  ladder:["Intern","Junior","Mid","Senior","ACD"],cur:1,
+  diff:["الآرت دايركتور مش جرافيك ديزاينر: الجرافيك بينفذ، الآرت دايركتور بيفكر بالفكرة بصريًا. وخد بالك إن اختصار AD بيتكتب كمان لـ Assistant Director في شركة الإنتاج، السياق هو اللي بيفرق.","An art director is not a graphic designer: the designer executes, the art director thinks the idea visually. Note that AD is also used for Assistant Director in the production house; context decides."],
+  tip:["ده أول درجة في طريق الـ CD. من خلفيتك، الكوبي رايتينج هو الأقرب لك.","This is the first rung on the road to CD. Given your background, copywriting is the closer fit."]},
+ {id:"ap",h:"agency",ab:"Agency Prod",name:"Agency Producer",ar:["منتج الوكالة","Agency Producer"],short:["همزة الوصل بين الوكالة وشركة الإنتاج","The link between agency and production"],
+  does:[["بياخد السكريبت من الكرييتيف ويبعته لـ 3 شركات إنتاج عشان يقدموا عروضهم (bidding).","Takes the script from creative and sends it to three production houses for bidding."],["بيراجع الميزانيات ويفاوض شركات الإنتاج.","Reviews budgets and negotiates with production houses."],["بيحضر التصوير ويتأكد إن اللي بيتصور هو اللي الـ CD والعميل اتفقوا عليه.","Attends the shoot and makes sure what's filmed is what the CD and client agreed."],["بيتابع المونتاج والصوت والجرافيكس لحد التسليم.","Follows the edit, sound and graphics through to delivery."]],
+  with:["الـ Executive Producer في شركة الإنتاج، والـ CD والأكونت جوه الوكالة","The Executive Producer at the production house, and the CD and account inside the agency"],
+  ladder:["Production Assistant","Agency Producer","Senior Producer","Head of Production"],cur:1,
+  diff:["هو والـ Executive Producer الاتنين منتجين، بس كل واحد واقف في ناحية من الترابيزة: ده بيمثل الوكالة والعميل، وده بيمثل شركة الإنتاج. في الوكالات الصغيرة الـ CD أو الأكونت بيعمل الدور ده بنفسه.","Both this role and the Executive Producer are producers, but on opposite sides of the table: this one represents the agency and client, the other represents the production house. In small agencies the CD or account person does this job."],
+  tip:["فيه ناس بتشتغل Freelance Producer لوحدهم، وبيتأجروا على المشروع من أي ناحية.","Some people work as freelance producers and are hired per project by either side."]},
+ {id:"ep",h:"prod",ab:"EP",name:"Executive Producer",ar:["المنتج المنفذ","Executive Producer"],short:["الفلوس والإدارة في الإنتاج","Money and management on the production side"],
+  does:[["بياخد السكريبت من الوكالة ويحدد الميزانية: كام يوم تصوير، كام ممثل، لوكيشن إيه، كاميرا إيه.","Takes the script from the agency and sets the budget: shoot days, cast size, locations, camera."],["بيختار المخرج والـ DOP والفريق المناسب للمشروع.","Chooses the director, the DOP and the right crew for the project."],["بيتفاوض مع الوكالة على السعر والجدول.","Negotiates price and schedule with the agency."],["بيحل المشاكل لما حاجة تتعطل: الجو، الممثل اتأخر، العميل غيّر رأيه.","Solves problems when things break: weather, a late actor, a client who changed their mind."],["مسؤول إن الشغل يتسلم في معاده وفي حدود الميزانية.","Responsible for delivering on time and within budget."]],
+  with:["الـ Agency Producer في الوكالة، والمخرج والـ Assistant Producer تحته","The Agency Producer at the agency, and the director and Assistant Producer below"],
+  ladder:["Production Assistant","Assistant Producer","Producer","Line Producer","Executive Producer"],cur:4,
+  diff:["مش بيفكر في الفكرة ولا الصورة، بيفكر: الفكرة دي هتتنفذ بكام، بمين، وإمتى.","Doesn't think about the idea or the image. Thinks: how much, with whom, and by when."],
+  tip:["ككرييتيف دايركتور هتتعامل معاه كتير في مرحلة الـ bidding.","As a CD you'll deal with the EP a lot during bidding."]},
+ {id:"asp",h:"prod",ab:"Asst. Prod",name:"Assistant Producer",ar:["مساعد المنتج","Assistant Producer"],short:["أول درجة في سلم الإنتاج","First rung on the production ladder"],
+  does:[["اللوجستيات: حجز اللوكيشن، التصاريح، المواصلات، الأكل والمية للفريق.","Logistics: booking locations, permits, transport, food and water for the crew."],["الكاستنج: بيتعامل مع وكالة الكاستنج، بيرتب جلسات الاختيار، بيتابع العقود.","Casting: deals with the casting agency, arranges auditions, follows up on contracts."],["الـ petty cash والفواتير، وبيقفلها مع الـ EP.","Petty cash and invoices, closed out with the EP."],["بيكلم المخرج والـ DOP والديكور والملابس والميك أب قبل التصوير.","Talks to the director, DOP, set design, wardrobe and makeup before the shoot."],["على الـ set بيحل اللي يظهر فجأة: البطارية خلصت، اللوكيشن اتقفل.","On set, fixes whatever pops up: a dead battery, a locked location."]],
+  with:["الـ EP فوقه، ووكالة الكاستنج والموردين برّه","The EP above, the casting agency and vendors outside"],
+  ladder:["Production Assistant","Assistant Producer","Producer","Line Producer","Executive Producer"],cur:1,
+  diff:["الفرق بينه وبين الـ AD: ده بيدير اللوجستيات والفلوس حوالين التصوير، والـ AD بيدير الوقت والناس على الـ set نفسه.","Versus the AD: this role manages logistics and money around the shoot; the AD manages time and people on the set itself."],
+  tip:["من أسهل الأبواب اللي تشوف منها التصوير على الطبيعة، بس ده طريق إنتاج مش كرييتيف.","One of the easiest doors to see a real shoot, but it's a production path, not a creative one."]},
+ {id:"dir",h:"prod",ab:"Dir",name:"Director",ar:["المخرج","Director"],short:["بيحكي القصة ويوجّه الممثلين","Tells the story and directs the actors"],
+  does:[["بياخد السكريبت وبيعمل رؤيته: الـ treatment، الـ shot list، الـ storyboard.","Takes the script and builds the vision: treatment, shot list, storyboard."],["بيوجّه الممثلين وبيقرر كل لقطة بتتصور إزاي.","Directs the actors and decides how every shot is filmed."],["بيشتغل مع الـ DOP على الصورة ومع الـ 1st AD على الجدول.","Works with the DOP on the image and with the 1st AD on the schedule."],["بيقعد ساعات مع المونتير في الـ Post.","Spends hours with the editor in post."]],
+  with:["الـ CD من الوكالة، الـ EP فوقه، الـ DOP والـ ADs جنبه، المونتير بعدين","The CD from the agency, the EP above, the DOP and ADs beside, the editor later"],
+  ladder:["Assistant Director","Second Unit Director","Director","Director in demand by name"],cur:2,
+  diff:["الـ CD قرر إيه الفكرة، المخرج بيقرر الفكرة دي تتحكي إزاي على الشاشة.","The CD decided what the idea is; the director decides how that idea is told on screen."],
+  tip:["في الـ bidding كل شركة إنتاج بتقدم مخرجها ورؤيته، وانت كـ CD بتختار.","In bidding, each production house proposes its director and their vision, and you as CD choose."]},
+ {id:"ad",h:"prod",ab:"1st/2nd/3rd AD",name:"Assistant Directors",ar:["مساعدين المخرج","Assistant Directors"],short:["بينظموا يوم التصوير","Run the shoot day"],
+  does:[["1st AD: رئيس الـ set. بيعمل جدول التصوير، بيصرخ هدوء تصوير، مسؤول إن اليوم يخلص في وقته وعن السلامة.","1st AD: boss of the set. Builds the shooting schedule, calls quiet on set, keeps the day on time and keeps it safe."],["2nd AD: بيدير الممثلين بعيد عن الكاميرا، بيعمل الـ Call Sheet والتقارير اليومية. مكتب الـ 1st AD.","2nd AD: manages the actors away from camera, makes the call sheet and daily reports. The 1st AD's office."],["3rd AD: بيدير الكومبارس، بيجري بين الـ set والـ base camp، بيقفل الشوارع. أول درجة.","3rd AD: manages the extras, runs between set and base camp, locks off streets. Entry level."]],
+  with:["المخرج مباشرة، والممثلين والفريق كله","The director directly, plus the actors and the whole crew"],
+  ladder:["3rd AD","2nd AD","1st AD",["(مخرج منفذ)","(Egyptian: mokhreg monafez)"],"Director"],cur:2,
+  diff:["برغم الاسم، شغلهم مش إخراج ولا إبداع، شغلهم تنظيم عشان المخرج يركز في الكاميرا والممثلين.","Despite the name, their job isn't directing or creative. It's organizing, so the director can focus on camera and actors."],
+  tip:["في مصر بتسمع 'مخرج منفذ' وده بيوازي 1st AD تقريبًا.","In Egypt you'll hear 'mokhreg monafez', which is roughly the 1st AD."]},
+ {id:"dop",h:"prod",ab:"DOP / DP",name:"Director of Photography",ar:["مدير التصوير","Director of Photography"],short:["الكاميرا والإضاءة والصورة","Camera, lighting and the image"],
+  does:[["بيختار الكاميرا والعدسات وحركة الكاميرا.","Chooses the camera, lenses and camera movement."],["بيصمم الإضاءة واللوك العام والألوان.","Designs the lighting, the overall look and the colors."],["بيترجم رؤية المخرج لصورة حلوة فعلًا على الشاشة.","Translates the director's vision into a beautiful image on screen."],["بيقود فريق التصوير والإضاءة.","Leads the camera and lighting crew."]],
+  with:["المخرج أولًا، والـ Colorist في الـ Post بعدين","The director first, then the colorist in post"],
+  ladder:["Camera Assistant","Camera Operator","DOP"],cur:2,
+  diff:["الـ CD يحدد الفكرة، المخرج يحكي القصة، الـ DOP يعمل الصورة. وهو من ناس شركة الإنتاج مش الوكالة.","The CD sets the idea, the director tells the story, the DOP makes the image. And the DOP belongs to the production house, not the agency."],
+  tip:["مش محتاج تبقى DOP، بس محتاج تفهم لغته عشان تقول 'عايز اللقطة أوسع' أو 'الإضاءة أدفى'.","You don't need to be a DOP, but you need their language, so you can say 'wider shot' or 'warmer light'."]},
+ {id:"bts",h:"prod",ab:"BTS",name:"BTS Videographer",ar:["مصوّر الكواليس","BTS Videographer"],short:["بيصور Behind The Scenes","Shoots the behind the scenes"],
+  does:[["BTS = Behind The Scenes، كواليس التصوير: المخرج بيوجّه، الفريق بيركب الإضاءة، لقطة باظت.","BTS = Behind The Scenes: the director directing, the crew rigging lights, a take that went wrong."],["بيتنزل على السوشيال بعد الإعلان، وأحيانًا بيجيب تفاعل أعلى من الإعلان نفسه.","Posted on social after the ad, sometimes getting more engagement than the ad itself."],["بورتفوليو لشركة الإنتاج والمخرج والوكالة.","Portfolio material for the production house, the director and the agency."],["شخص منفصل عن الـ DOP، وفي المشاريع الصغيرة ممكن الـ AD يصوره بموبايله.","A separate person from the DOP; on small jobs an AD might shoot it on a phone."]],
+  with:["الكل على الـ set، بس من غير ما يعطّل التصوير الأساسي","Everyone on set, without getting in the way of the main shoot"],
+  ladder:["BTS Videographer","Content Creator","Director"],cur:0,
+  diff:["ده مش بوزيشن إدارة، ده نوع محتوى. بس من أحسن الطرق تتعلم بيها إزاي الإعلان بيتصنع.","Not a management position; it's a content type. But one of the best ways to learn how an ad is made."],
+  tip:["دوّر على الـ BTS بتاع أي حملة بتعجبك، هتشوف كل الأدوار دي وهي شغالة.","Look up the BTS of any campaign you like. You'll see all these roles at work."]},
+ {id:"cast",h:"prod",ab:"Casting",name:"Casting Agency",ar:["وكالة الكاستنج","Casting Agency"],short:["مورد خارجي زي Keeva","External vendor, like Keeva"],ext:true,
+  does:[["عندها قاعدة بيانات من الممثلين والموديلز والوشوش العادية.","Keeps a database of actors, models and everyday faces."],["بتاخد وصف الشخصية من المخرج وبترشح ناس.","Takes the character description from the director and proposes people."],["بتعمل الـ auditions وبتصورهم وبتبعتهم للمخرج والوكالة والعميل.","Runs the auditions, films them and sends them to the director, agency and client."],["بتتفاوض على الأجور وبتنظم العقود.","Negotiates fees and handles contracts."]],
+  with:["الـ Assistant Producer يوم بيوم، والمخرج في الاختيار","The Assistant Producer day to day, and the director for the final pick"],
+  ladder:["Casting Assistant","Casting Coordinator","Casting Director"],cur:1,
+  diff:["مش تبع الوكالة ولا تبع شركة الإنتاج. مورد خارجي (vendor) بيشتغل معاهم مشروع بمشروع، زيها زي شركة المعدات.","Belongs to neither the agency nor the production house. An external vendor hired project by project, like the equipment rental company."],
+  tip:["Keeva Casting Agency في الدقي من أشهر مكاتب الكاستنج في مصر، وظهرت في credits حملات MG و OPPO وتاج مصر.","Keeva Casting Agency in Dokki is one of Egypt's best-known casting offices, credited on MG, OPPO and Taj Misr campaigns."]},
+ {id:"ed",h:"post",ab:"Editor",name:"Editor",ar:["المونتير","Editor"],short:["بيركّب الإعلان من اللقطات","Assembles the ad from the footage"],
+  does:[["بيختار أحسن take من كل مشهد وبيرتب اللقطات.","Picks the best take of each scene and orders the shots."],["بيظبط الإيقاع: سريع ومرح ولا بطيء وعاطفي.","Sets the pacing: fast and fun, or slow and emotional."],["بيحل مشاكل التصوير بلقطة بديلة.","Covers shooting problems with an alternative shot."],["بيطلّع 3 أو 4 نسخ (cuts) للمخرج والوكالة يختاروا.","Produces 3 or 4 cuts for the director and agency to choose from."],["بعد الـ picture lock بيبعت للـ colorist والصوت والجرافيكس.","After picture lock, hands off to the colorist, sound and graphics."]],
+  with:["المخرج بالدرجة الأولى، وبعدين الـ CD والأكونت","The director first, then the CD and account"],
+  ladder:["Assistant Editor","Editor","Senior Editor","Post Producer"],cur:1,
+  diff:["الإعلان بيتكتب 3 مرات: في السكريبت، في التصوير، وفي المونتاج. المونتير ممكن ينقذ فكرة ضعيفة أو يضيّع فكرة قوية.","An ad is written three times: in the script, in the shoot, and in the edit. An editor can rescue a weak idea or lose a strong one."],
+  tip:["جرّب تعمل مونتاج بسيط على CapCut لإعلان وهمي من بورتفوليوك، هتفهم المونتير بيعاني من إيه. البرامج المحترفة: Premiere و DaVinci Resolve.","Try a simple edit in CapCut for a spec ad from your portfolio; you'll understand what editors struggle with. Pro tools: Premiere and DaVinci Resolve."]},
+ {id:"col",h:"post",ab:"Colorist",name:"Colorist",ar:["مصحح الألوان","Colorist"],short:["اللوك النهائي للصورة","The final look of the image"],
+  does:[["Color Grading: الصورة تبقى دافية، باردة، سينمائية.","Color grading: warm, cold, cinematic."],["بيوحّد الألوان بين اللقطات اللي اتصورت في أوقات مختلفة.","Matches colors across shots filmed at different times."],["بيشتغل من رؤية الـ DOP والمخرج.","Works from the DOP's and director's vision."]],
+  with:["الـ DOP والمخرج","The DOP and the director"],
+  ladder:["Assistant Colorist","Colorist","Senior Colorist"],cur:1,
+  diff:["بيستلم بعد الـ picture lock، يعني بعد ما المونتاج يتوافق عليه.","Starts after picture lock, once the edit is approved."],
+  tip:["مثال: VIVID Studios عملت الـ grading لإعلان OPPO.","Example: VIVID Studios did the grading for the OPPO ad."]},
+ {id:"snd",h:"post",ab:"Sound",name:"Sound Designer",ar:["مصمم الصوت","Sound Designer"],short:["الفويس أوفر والموسيقى والمؤثرات","Voice over, music and effects"],
+  does:[["بيسجل ويركّب الفويس أوفر (VO).","Records and lays the voice over (VO)."],["بيختار أو يطلب الموسيقى والمؤثرات الصوتية.","Picks or commissions music and sound effects."],["بيعمل الـ mix: توحيد مستوى الصوت للتلفزيون والسوشيال.","Does the mix: levels balanced for TV and social."]],
+  with:["المونتير والمخرج والـ CD","The editor, the director and the CD"],
+  ladder:["Sound Assistant","Sound Designer","Sound Supervisor"],cur:1,
+  diff:["نص إحساس الإعلان جاي من الصوت، وده بيتعمل في آخر مرحلة.","Half the feeling of an ad comes from sound, and it's done at the very end."],
+  tip:["الـ VO في الإعلان المصري بيتكتب بالكوبي رايتر، يعني ده شغلك مستقبلًا.","In Egyptian ads the VO is written by the copywriter, so that's your future job."]},
+ {id:"vfx",h:"post",ab:"CG / VFX",name:"VFX / Motion Graphics",ar:["المؤثرات والجرافيكس","VFX / Motion Graphics"],short:["اللوجو والنصوص والمؤثرات","Logo, on-screen text and effects"],
+  does:[["اللوجو والنصوص على الشاشة (supers) والـ end frame.","The logo, on-screen text (supers) and the end frame."],["المؤثرات البصرية: مسح حاجة من الصورة، تركيب حاجة مش موجودة.","Visual effects: removing something from the image, adding something that wasn't there."],["الأنيميشن لو الإعلان فيه جزء مرسوم.","Animation if the ad has an illustrated part."],["التصدير بمقاسات مختلفة: تلفزيون، إنستجرام، تيك توك.","Exports in different sizes: TV, Instagram, TikTok."]],
+  with:["المونتير والآرت دايركتور","The editor and the art director"],
+  ladder:["Junior Motion Designer","Motion Designer","VFX Supervisor"],cur:1,
+  diff:["الـ Post Producer هو اللي بينسق كل ناس الـ Post دول مع شركة الإنتاج والوكالة.","The Post Producer coordinates all these post people with the production house and the agency."],
+  tip:["شركات الإنتاج الكبيرة ساعات عندها قسم post جواها، بس في مصر كتير بيبعتوا لـ post houses متخصصة.","Big production houses sometimes have in-house post, but in Egypt many send work to specialized post houses."]}
+];
+/* ---------- journey ---------- */
+const STEPS=[
+ {n:["المحطة 1","Stop 1"],t:["العميل","Client"],s:["Client","the brief"],h:["العميل عنده مشكلة بيزنس","The client has a business problem"],body:["البراند عايز يبيع أكتر أو يغيّر صورته. بيروح للوكالة الإعلانية ويقعد مع الـ Account Manager ويديه البريف: الهدف إيه، الجمهور مين، الميزانية كام، والمعاد إمتى.","The brand wants to sell more or change its image. It goes to the agency, sits with the Account Manager and gives the brief: the goal, the audience, the budget and the deadline."],pts:[["الأكونت بيحوّل كلام العميل لـ Creative Brief مكتوب.","Account turns the client's words into a written creative brief."],["الـ MD بيتدخل لو العميل كبير أو العقد جديد.","The MD steps in if the client is big or the contract is new."]]},
+ {n:["المحطة 2","Stop 2"],t:["الوكالة","Agency"],s:["الفكرة والسكريبت","idea and script"],h:["بيت الفكرة","The house of the idea"],body:["الـ Creative Director بياخد البريف، ومعاه الكوبي رايتر والآرت دايركتور بيطلّعوا أفكار كتير. الـ CD بيختار الـ big idea، وبيتقدم للعميل مع الأكونت. لما العميل يوافق، الـ Agency Producer بيبعت السكريبت لـ 3 شركات إنتاج عشان يقدموا عروضهم (bidding).","The Creative Director takes the brief, and with the copywriter and art director generates many ideas. The CD picks the big idea and presents it to the client with account. Once the client approves, the Agency Producer sends the script to three production houses for bidding."],pts:[["الإنسايت ← الـ positioning ← الـ big idea ← التنفيذ.","Insight → positioning → big idea → execution."],["الفكرة بتتباع للعميل قبل ما تتصور.","The idea is sold to the client before anything is shot."]]},
+ {n:["المحطة 3","Stop 3"],t:["الإنتاج","Production"],s:["التصوير","the shoot"],h:["بيت التصوير","The house of the shoot"],body:["شركة الإنتاج اللي كسبت الـ bidding بتبدأ الـ pre-production: الـ Executive Producer بيظبط الميزانية والفريق، الـ Assistant Producer بيجري على اللوكيشن والتصاريح والكاستنج (مع وكالة كاستنج زي Keeva)، المخرج بيعمل الـ storyboard مع الـ DOP. يوم التصوير الـ 1st AD بيدير الـ set والـ BTS بيصور الكواليس.","The production house that won the bidding starts pre-production: the Executive Producer sets budget and crew, the Assistant Producer handles locations, permits and casting (with a casting agency like Keeva), the director builds the storyboard with the DOP. On shoot day the 1st AD runs the set and the BTS videographer films behind the scenes."],pts:[["الـ Agency Producer والـ CD بيحضروا التصوير.","The Agency Producer and the CD attend the shoot."],["وكالة الكاستنج مورد خارجي، مش تبع حد.","The casting agency is an external vendor, belonging to no one."]]},
+ {n:["المحطة 4","Stop 4"],t:["الـ Post","Post"],s:["التشطيب","finishing"],h:["بيت التشطيب","The finishing house"],body:["المادة المصورة بتروح للـ Post House. المونتير بيركّب الإعلان ويطلّع نسخ، والمخرج والـ CD بيختاروا. بعد الـ picture lock بييجي الـ Colorist والصوت والجرافيكس. الـ Post Producer بينسق كل ده.","The footage goes to the post house. The editor assembles the ad and produces cuts; the director and CD choose. After picture lock come the colorist, sound and graphics. The Post Producer coordinates all of it."],pts:[["الإعلان بيتكتب للمرة التالتة هنا، على ترابيزة المونتاج.","The ad is written for the third time here, on the editing table."],["بيتصدّر بمقاسات مختلفة لكل منصة.","Exported in different sizes for each platform."]]},
+ {n:["المحطة 5","Stop 5"],t:["الإعلان","The ad"],s:["على الشاشة","on screen"],h:["الإعلان النهائي","The final ad"],body:["الأكونت بيسلّم العميل النسخة النهائية، والإعلان بينزل على التلفزيون (TVC)، السوشيال (DVC)، والشوارع (OOH). والـ BTS بينزل بعده على السوشيال.","Account delivers the final version to the client, and the ad goes out on TV (TVC), social (DVC) and the streets (OOH). The BTS follows on social."],pts:[["الوكالة بتسجّله على Ads of the World وبتقدمه في Cannes و D&AD.","The agency posts it on Ads of the World and enters it at Cannes and D&AD."],["انت بتقراه هناك وبتفهم الـ credits.","You read it there and understand the credits."]]}
+];
+/* ---------- relations ---------- */
+const RELS=[
+ {a:["العميل","Client"],ac:"var(--ext)",b:"Account Manager",bc:"var(--agency)",t:["البريف والفيدباك والفواتير. الأكونت هو وش الوكالة عند العميل.","Brief, feedback and invoices. Account is the agency's face to the client."]},
+ {a:"Account Manager",ac:"var(--agency)",b:"Creative Director",bc:"var(--agency)",t:["الأكونت بيجيب البريف، الـ CD بيرجّع الفكرة. شد وجذب صحي بين إرضاء العميل وحماية الفكرة.","Account brings the brief, the CD returns the idea. A healthy tug of war between pleasing the client and protecting the idea."]},
+ {a:"Creative Director",ac:"var(--agency)",b:"Copywriter + Art Director",bc:"var(--agency)",t:["الـ CD بيوجّه ويختار، الاتنين بيكتبوا ويصمموا وبيطلّعوا بدائل.","The CD guides and picks; the pair writes, designs and produces alternatives."]},
+ {a:"Agency Producer",ac:"var(--agency)",b:"Executive Producer",bc:"var(--prod)",t:["الجسر بين البيتين: السكريبت يروح، العرض والميزانية يرجعوا (bidding).","The bridge between the two houses: the script goes out, the offer and budget come back (bidding)."]},
+ {a:"Creative Director",ac:"var(--agency)",b:"Director",bc:"var(--prod)",t:["الـ CD عنده الفكرة، المخرج عنده الرؤية. بيتفقوا على الـ treatment والـ storyboard.","The CD has the idea, the director has the vision. They agree on the treatment and storyboard."]},
+ {a:"Director",ac:"var(--prod)",b:"DOP",bc:"var(--prod)",t:["المخرج بيقول عايز إيه، الـ DOP بيقول هنعمله إزاي بالكاميرا والإضاءة.","The director says what they want; the DOP says how to do it with camera and light."]},
+ {a:"Director",ac:"var(--prod)",b:"1st AD",bc:"var(--prod)",t:["المخرج بيركز في اللقطة، الـ 1st AD بيركز في الساعة والناس.","The director focuses on the shot; the 1st AD focuses on the clock and the people."]},
+ {a:"Executive Producer",ac:"var(--prod)",b:"Assistant Producer",bc:"var(--prod)",t:["الـ EP بيقرر، الـ Assistant Producer بينفذ ويجري.","The EP decides; the Assistant Producer executes and runs."]},
+ {a:"Assistant Producer",ac:"var(--prod)",b:"Casting Agency",bc:"var(--ext)",t:["وصف الشخصية يروح، الـ auditions ترجع. وكالة الكاستنج مورد خارجي.","The character description goes out, the auditions come back. The casting agency is an external vendor."]},
+ {a:"Director",ac:"var(--prod)",b:"Editor",bc:"var(--post)",t:["ساعات في غرفة المونتاج. المونتير بيطلّع cuts والمخرج بيختار.","Hours in the edit suite. The editor produces cuts, the director chooses."]},
+ {a:"Creative Director",ac:"var(--agency)",b:"Editor",bc:"var(--post)",t:["الـ CD بييجي يشوف النسخ ويقول الفكرة لسه موجودة ولا ضاعت.","The CD comes to view the cuts and checks whether the idea survived."]},
+ {a:"DOP",ac:"var(--prod)",b:"Colorist",bc:"var(--post)",t:["اللوك اللي الـ DOP صوّره، الـ Colorist بيكمّله ويوحّده.","The look the DOP shot, the colorist completes and unifies."]}
+];
+/* ---------- abbreviations ---------- */
+const ABBR=[
+ ["CD / Crtv","Creative Director",["المدير الإبداعي، صاحب الفكرة","Creative director, owns the idea"],"a"],
+ ["ECD","Executive Creative Director",["أعلى من CD، بيدير كل الكرييتيف دايركتورز","Above CD, runs all the creative directors"],"a"],
+ ["ACD","Associate Creative Director",["الدرجة اللي قبل CD","The rung just below CD"],"a"],
+ ["CW","Copywriter",["كوبي رايتر، الكلمة والسكريبت","The words and the script"],"a"],
+ ["AD","Art Director",["آرت دايركتور (في الوكالة). نفس الاختصار بيتكتب لـ Assistant Director في الإنتاج","Art director (agency). Same letters are used for Assistant Director in production"],"a"],
+ ["Acc","Account (Manager / Director)",["أكونت، بيتعامل مع العميل","Account, deals with the client"],"a"],
+ ["Strat","Strategy / Strategist",["بيكتب الاستراتيجية والإنسايت قبل الفكرة","Writes the strategy and insight before the idea"],"a"],
+ ["MD","Managing Director",["المدير العام للوكالة","General manager of the agency"],"a"],
+ ["PH","Production House",["شركة الإنتاج","The production company"],"p"],
+ ["EP","Executive Producer",["المنتج المنفذ، الفلوس والفريق","Executive producer: money and crew"],"p"],
+ ["Prod","Producer",["منتج","Producer"],"p"],
+ ["Line Prod","Line Producer",["المنتج اللي بيدير الميزانية اليومية على الأرض","Runs the daily budget on the ground"],"p"],
+ ["Dir","Director",["المخرج","The director"],"p"],
+ ["1st / 2nd / 3rd AD","Assistant Director",["مساعد مخرج أول / تاني / تالت","First / second / third assistant director"],"p"],
+ ["DOP / DP","Director of Photography",["مدير التصوير","Cinematographer"],"p"],
+ ["BTS","Behind The Scenes",["كواليس التصوير","Behind the scenes footage"],"p"],
+ ["Casting","Casting Agency / Director",["وكالة الكاستنج (مثال: Keeva)","Casting agency (e.g. Keeva)"],"p"],
+ ["Post","Post-Production House",["شركة ما بعد الإنتاج","The post-production company"],"o"],
+ ["Edit","Editor",["المونتير","The editor"],"o"],
+ ["Grading","Color Grading / Colorist",["تصحيح الألوان","Color correction"],"o"],
+ ["CG / VFX","Computer Graphics / Visual Effects",["الجرافيكس والمؤثرات","Graphics and effects"],"o"],
+ ["VO","Voice Over",["التعليق الصوتي","The narrator's voice"],"o"],
+ ["Mix","Sound Mix",["تظبيط الصوت النهائي","Final sound balance"],"o"],
+ ["TVC","TV Commercial",["إعلان تلفزيوني","A TV ad"],""],
+ ["DVC","Digital Video Commercial",["إعلان فيديو للسوشيال مش للتلفزيون","A video ad for social, not TV"],""],
+ ["OOH","Out Of Home",["إعلانات الشوارع والبيلبوردز","Street ads and billboards"],""],
+ ["Brief","Creative Brief",["الورقة اللي بتحوّل طلب العميل لمهمة للكرييتيف","The page that turns the client's request into a creative task"],""],
+ ["Bidding","Production Bidding",["3 شركات إنتاج تقدم سعرها ومخرجها وانت تختار","Three production houses pitch price and director; you choose"],""],
+ ["Picture lock","Picture Lock",["المونتاج اتوافق عليه، مفيش تغيير في اللقطات بعد كده","The edit is approved; no more shot changes"],"o"],
+ ["Call sheet","Call Sheet",["ورقة يومية: مين ييجي إمتى وفين","Daily sheet: who arrives when and where"],"p"],
+ ["Spec work","Speculative Work",["حملة وهمية لبراند حقيقي تحطها في بورتفوليوك","A made-up campaign for a real brand, for your portfolio"],""]
+];
+/* ---------- egypt cards ---------- */
+const EGYPT=[
+ {h:["الألقاب بالعربي","Titles in Arabic"],ul:[["<b>مخرج منفذ</b>: لقب مصري بيوازي 1st AD تقريبًا، منتشر في الأفلام والمسلسلات أكتر.","<b>Mokhreg monafez</b> (executing director): an Egyptian title roughly equal to 1st AD, more common in film and TV series."],["<b>مساعد مخرج أول / تاني / تالت</b>: نفس 1st / 2nd / 3rd AD.","<b>Mosa'ed mokhreg awal / tani / talet</b>: 1st / 2nd / 3rd AD."],["<b>مدير تصوير</b>: DOP.","<b>Modir tasweer</b>: DOP."],["<b>مونتير</b>: Editor. <b>المنتج المنفذ</b>: Executive Producer.","<b>Monteer</b>: editor. <b>El montag el monafez</b>: executive producer."],["<b>\"الوكالة\"</b> في كلام الناس بتقصد الوكالة الإعلانية، و<b>\"الإنتاج\"</b> بتقصد شركة الإنتاج.","In everyday talk, <b>\"the agency\"</b> means the creative agency and <b>\"production\"</b> means the production house."]]},
+ {h:["وكالات إعلانية مصرية","Egyptian creative agencies"],p:["الأسماء اللي بتتكرر في حملات رمضان والحملات الكبيرة:","Names that keep showing up in Ramadan and big campaigns:"],ul:["Tarek Nour Advertising (TNA) / DDB Egypt","FP7 McCann Cairo","Leo Burnett Cairo","Impact BBDO","7 Advertising"]},
+ {h:["شركات إنتاج و Post","Production and post houses"],ul:[["<b>إنتاج:</b> Kino Films، Craft Media، One Stop Shop","<b>Production:</b> Kino Films, Craft Media, One Stop Shop"],["<b>Post:</b> VIVID Studios (مثلًا بتعمل grading)","<b>Post:</b> VIVID Studios (grading, for example)"],["<b>كاستنج:</b> Keeva Casting Agency (الدقي)، Challenge، Prova، Wee، The Rocket، Frame","<b>Casting:</b> Keeva Casting Agency (Dokki), Challenge, Prova, Wee, The Rocket, Frame"]]},
+ {h:["اقرا الـ credits كده","How to read the credits"],p:["مثال حقيقي من حملة MG Motors على Ads of the World. لوّنّا لك كل اسم بيروح لأنهي بيت:","A real example from the MG Motors campaign on Ads of the World. The highlighted names are companies, each one a house:"],credits:"Agency: <span>DDB Egypt / TNA</span><br>Production house: <span>Kino Films</span><br>Director: Amr Haddad · DOP: Hamzoon<br>1st AD: Wael Mandour · 2nd AD: Marianne Magdy<br>Executive Producers: Amira Sherif &amp; A. Karim<br>Casting: <span>Keeva Casting Agency</span><br>Post: <span>The Barber Shop</span>"},
+ {h:["فين تتفرج على الإعلانات","Where to watch ads"],ul:[["<a href=\"https://www.adsoftheworld.com\">adsoftheworld.com</a>: فلتر بـ Country (Egypt) و Media (Film) واقرا الـ credits.","<a href=\"https://www.adsoftheworld.com\">adsoftheworld.com</a>: filter by Country (Egypt) and Media (Film) and read the credits."],["أرشيف Cannes Lions و D&AD للحملات العالمية.","The Cannes Lions and D&AD archives for global campaigns."],["صفحات شركات الإنتاج المصرية على إنستجرام عشان الـ BTS.","Egyptian production houses on Instagram for BTS."]]}
+];
+/* ---------- paths ---------- */
+const PATHS=[
+ {t:["طريق الكرييتيف","The creative path"],c:"var(--agency)",y:["7 إلى 10 سنين للـ CD","7 to 10 years to CD"],l:[["Intern / Junior Copywriter أو Art Director","Intern / Junior Copywriter or Art Director"],["Mid ← Senior","Mid → Senior"],"Associate Creative Director","Creative Director",["ECD أو Creative & Operations Director","ECD or Creative & Operations Director"]]},
+ {t:["طريق الأكونت","The account path"],c:"var(--agency)",y:["أسهل دخول لخلفية السيلز","Easiest entry from sales"],l:["Account Executive","Account Manager","Account Director","Client Services Director","Managing Director"]},
+ {t:["طريق الإنتاج","The production path"],c:"var(--prod)",y:["تنفيذ وإدارة أكتر من أفكار","More execution and management than ideas"],l:["Production Assistant","Assistant Producer","Producer","Line Producer","Executive Producer"]},
+ {t:["طريق الـ set","The set path"],c:"var(--prod)",y:["من التنظيم للإخراج","From organizing to directing"],l:["3rd AD","2nd AD",["1st AD (مخرج منفذ)","1st AD (mokhreg monafez)"],"Director"]},
+ {t:["طريق الكاميرا","The camera path"],c:"var(--prod)",y:["الصورة","The image"],l:["Camera Assistant","Camera Operator","DOP"]},
+ {t:["طريق الـ Post","The post path"],c:"var(--post)",y:["التشطيب","Finishing"],l:["Assistant Editor","Editor / Colorist / Motion Designer","Senior","Post Producer"]}
+];
+/* ---------- quiz ---------- */
+const QUIZ=[
+ {q:["الـ Agency Producer تبع أنهي شركة؟","Which company does the Agency Producer belong to?"],o:[["شركة الإنتاج","The production house"],["الوكالة الإعلانية","The creative agency"],["الـ Post House","The post house"],["لوحده دايمًا","Always freelance"]],a:1,e:["موظف جوه الوكالة، وبيمثل مصلحة الوكالة والعميل قدام شركة الإنتاج.","Employed inside the agency, representing the agency and client to the production house."]},
+ {q:["مين المسؤول عن الكاميرا والإضاءة؟","Who is responsible for camera and lighting?"],o:[["المخرج","The director"],["الـ 1st AD","The 1st AD"],["الـ DOP","The DOP"],["الـ EP","The EP"]],a:2,e:["الـ DOP (مدير التصوير) بيعمل الصورة، المخرج بيحكي القصة.","The DOP makes the image; the director tells the story."]},
+ {q:["BTS يعني إيه؟","What does BTS mean?"],o:[["بوزيشن مساعد منتج","An assistant producer position"],["كواليس التصوير","Behind the scenes"],["نوع كاميرا","A camera type"],["اختصار لشركة إنتاج","A production house abbreviation"]],a:1,e:["Behind The Scenes، نوع محتوى مش بوزيشن.","Behind The Scenes: a content type, not a position."]},
+ {q:["الـ Executive Producer بيفكر في إيه بالأساس؟","What does the Executive Producer mainly think about?"],o:[["الفكرة حلوة ولا لأ","Whether the idea is good"],["اللقطة أوسع ولا أضيق","Whether the shot is wider or tighter"],["الميزانية والفريق والمعاد","Budget, crew and deadline"],["المونتاج","The edit"]],a:2,e:["الفلوس والإدارة. الفكرة شغل الـ CD، والصورة شغل الـ DOP.","Money and management. The idea is the CD's job, the image is the DOP's."]},
+ {q:["وكالة الكاستنج زي Keeva تبع مين؟","Who does a casting agency like Keeva belong to?"],o:[["الوكالة الإعلانية","The creative agency"],["شركة الإنتاج","The production house"],["مورد خارجي مش تبع حد","An external vendor, no one"],["العميل","The client"]],a:2,e:["Vendor بيشتغل مع شركة الإنتاج مشروع بمشروع.","A vendor that works with the production house project by project."]},
+ {q:["الإعلان بيتكتب كام مرة؟","How many times is an ad written?"],o:[["مرة واحدة في السكريبت","Once, in the script"],["مرتين","Twice"],["3 مرات: سكريبت، تصوير، مونتاج","Three times: script, shoot, edit"],["4 مرات","Four times"]],a:2,e:["ده اللي بيخلي الـ CD الشاطر يقعد في غرفة المونتاج.","That's why a good CD sits in the edit suite."]}
+];
+/* ---------- glossary: [regex, en, ar, explanation ar, explanation en] ---------- */
+const GLOSS=[
+ [/الإنسايت|إنسايت|insight/i,"Insight","الإنسايت","الحقيقة الإنسانية اللي الإعلان مبني عليها: حاجة الناس بتحسها ومش بتقولها، لما تشوفها في الإعلان تقول 'ده أنا'.","The human truth the ad is built on: something people feel but don't say, so when they see it they think 'that's me'."],
+ [/positioning/i,"Positioning","التموضع","المكانة اللي البراند عايز ياخدها في دماغ الناس مقارنة بالمنافسين: الأرخص؟ الأفخم؟ الأقرب للشباب؟","The place a brand wants to own in people's minds versus competitors: cheapest? most premium? closest to the young?"],
+ [/big idea/i,"Big idea","الفكرة الكبيرة","الفكرة الواحدة اللي الحملة كلها بتتبني عليها، وتقدر تتنفذ في فيديو وبوستر وسوشيال وتفضل واضحة.","The one idea the whole campaign is built on, which works as a film, a poster and a social post and stays clear."],
+ [/التنفيذ|\bexecutions?\b/i,"Execution","التنفيذ","تحويل الفكرة لحاجة فعلية: سكريبت، تصوير، تصميم، مونتاج. فكرة قوية وتنفيذ ضعيف بتضيع.","Turning the idea into something real: script, shoot, design, edit. A strong idea with weak execution is lost."],
+ [/Creative Brief|creative brief|البريف|\bthe brief\b/,"Creative brief","البريف","ورقة قصيرة بتحوّل طلب العميل لمهمة واضحة للكرييتيف: الهدف، الجمهور، الرسالة، النبرة، الميزانية، المعاد.","A short document that turns the client's request into a clear task for creative: goal, audience, message, tone, budget, deadline."],
+ [/bidding/i,"Bidding","المناقصة","الوكالة بتبعت السكريبت لـ 3 شركات إنتاج، وكل واحدة بتقدم سعرها ومخرجها ورؤيته، والوكالة بتختار.","The agency sends the script to three production houses; each pitches a price, a director and a vision, and the agency chooses."],
+ [/pre-production/i,"Pre-production","التحضير للتصوير","كل اللي بيحصل قبل يوم التصوير: اللوكيشن، الكاستنج، الـ storyboard، الجداول، الميزانية.","Everything before shoot day: locations, casting, storyboard, schedules, budget."],
+ [/treatment/i,"Treatment","رؤية المخرج","ورقة أو عرض بيشرح فيه المخرج هيحكي السكريبت إزاي: الإحساس، الألوان، الإيقاع، المراجع.","A document or deck where the director explains how they'll tell the script: feel, colors, pace, references."],
+ [/shot list/i,"Shot list","قائمة اللقطات","قائمة بكل لقطة هتتصور: نوعها (واسعة، قريبة)، حركتها، ومدتها.","A list of every shot to film: its type (wide, close), movement and duration."],
+ [/storyboard/i,"Storyboard","القصة المرسومة","رسومات لكل لقطة بالترتيب زي قصة مصورة، عشان الكل يتخيل الإعلان قبل التصوير.","Drawings of each shot in order, like a comic, so everyone can picture the ad before the shoot."],
+ [/call sheet/i,"Call sheet","ورقة النداء","الورقة اليومية اللي بتقول كل واحد في الفريق ييجي إمتى، فين، وهيعمل إيه.","The daily sheet telling every crew member when and where to arrive and what they'll do."],
+ [/picture lock/i,"Picture lock","قفل المونتاج","اللحظة اللي المونتاج بيتوافق عليه نهائيًا، ومفيش تغيير في اللقطات بعدها. بعدها بييجي اللون والصوت.","The moment the edit is finally approved and no shots change afterwards. Then come color and sound."],
+ [/color grading|grading/i,"Color grading","تصحيح الألوان","تظبيط ألوان الصورة بعد المونتاج عشان يبقى لها لوك موحد: دافي، بارد، سينمائي.","Adjusting the image's colors after the edit for a unified look: warm, cold, cinematic."],
+ [/الـ mix|\bthe mix\b/,"Sound mix","المكس","خلط كل عناصر الصوت (فويس أوفر، موسيقى، مؤثرات) وتوحيد مستواها.","Blending all sound elements (voice over, music, effects) and balancing their levels."],
+ [/الفويس أوفر|فويس أوفر|voice over|\bVO\b/i,"Voice over (VO)","التعليق الصوتي","الصوت اللي بيتكلم في الإعلان من غير ما نشوف صاحبه.","The voice speaking in the ad without us seeing the speaker."],
+ [/الـ set\b|على الـ set|set نفسه|\bon set\b|\bthe set\b|\bset itself\b/,"Set","موقع التصوير","المكان اللي التصوير بيحصل فيه فعليًا، سواء استوديو أو شارع أو بيت.","The place where filming actually happens, whether a studio, a street or a house."],
+ [/\btakes?\b/,"Take","لقطة محاولة","كل مرة المشهد بيتصور فيها. ممكن مشهد واحد يتصور 10 takes والمونتير يختار الأحسن.","Each time a scene is filmed. One scene may be shot 10 times and the editor picks the best."],
+ [/\bcuts?\b/,"Cut","نسخة مونتاج","نسخة من الإعلان بعد المونتاج. المونتير بيطلّع كذا cut مختلف عشان المخرج والوكالة يختاروا.","A version of the ad after editing. The editor produces several cuts for the director and agency to choose from."],
+ [/petty cash/i,"Petty cash","المصاريف النثرية","فلوس صغيرة سايلة للمصاريف اليومية في التصوير: مواصلات، أكل، حاجات طارئة.","Small cash on hand for daily shoot expenses: transport, food, emergencies."],
+ [/base camp/i,"Base camp","المعسكر","المكان القريب من موقع التصوير اللي فيه الكرفانات والميك أب والأكل، بعيد عن الكاميرا.","The area near the set with trailers, makeup and catering, away from the camera."],
+ [/mockups?/i,"Mockup","نموذج تجريبي","تصميم أو فيديو مبدئي بيوضح شكل الفكرة عشان تتباع للعميل قبل ما تتنفذ بجد.","A rough design or video showing what the idea would look like, to sell it before it's made for real."],
+ [/حملة وهمية|حملات وهمية|spec work|spec campaigns?|spec ad/i,"Spec work","حملة وهمية","حملة إعلانية بتعملها لبراند حقيقي من غير ما يطلبها، عشان تحطها في بورتفوليوك وتثبت مستواك.","A campaign you make for a real brand without being asked, to put in your portfolio and prove your level."],
+ [/بورتفوليو|بورتفوليوك|portfolio/i,"Portfolio","ملف الأعمال","مجموعة أحسن شغلك اللي بتقدمه للوكالة وقت التقديم. في الكرييتيف ده أهم من الشهادة.","A collection of your best work shown when applying to an agency. In creative it matters more than a degree."],
+ [/supers/i,"Supers","النصوص على الشاشة","الكلام المكتوب اللي بيظهر فوق الصورة في الإعلان: سعر، شرط، اسم المنتج.","Text that appears over the image in an ad: a price, a condition, a product name."],
+ [/end frame/i,"End frame","اللقطة الختامية","آخر لقطة في الإعلان، غالبًا فيها اللوجو والسلوجان.","The last frame of the ad, usually with the logo and slogan."],
+ [/auditions?/i,"Audition","تجربة أداء","جلسة بيتصور فيها الممثلين المرشحين وهم بيمثلوا جزء من السكريبت عشان المخرج يختار.","A session where candidate actors are filmed performing part of the script so the director can choose."],
+ [/مورد خارجي|\bvendors?\b/i,"Vendor","مورد خارجي","شركة أو شخص بيتأجر على المشروع من برّه: كاستنج، معدات، استوديو. مش موظف عند حد.","A company or person hired per project from outside: casting, equipment, studio. Not anyone's employee."],
+ [/Cannes Lions|\bCannes\b/,"Cannes Lions","مهرجان كان للإعلانات","أهم مهرجان جوايز إعلانات في العالم، بيتعمل في فرنسا كل سنة.","The most important advertising awards festival in the world, held in France every year."],
+ [/D&amp;AD|D&AD/,"D&AD","جوايز D&AD","منظمة بريطانية لجوايز التصميم والإعلان، وبتنشر كتب تعليمية زي The Copy Book.","A British design and advertising awards body that also publishes teaching books like The Copy Book."],
+ [/Ads of the World/,"Ads of the World","موقع إعلانات العالم","موقع بيأرشف الحملات الإعلانية من كل دولة مع credits كل حملة. adsoftheworld.com","A site archiving ad campaigns from every country with each campaign's credits. adsoftheworld.com"],
+ [/\bcredits\b/i,"Credits","قائمة الأسماء","قائمة أسماء كل اللي اشتغلوا على الإعلان: الوكالة، شركة الإنتاج، المخرج، الـ DOP، وهكذا.","The list of everyone who worked on the ad: agency, production house, director, DOP, and so on."],
+ [/\bTVC\b/,"TVC","إعلان تلفزيوني","TV Commercial: الإعلان بنسخته اللي بتتعرض على التلفزيون، غالبًا 30 أو 60 ثانية.","TV Commercial: the version of the ad that airs on TV, usually 30 or 60 seconds."],
+ [/\bDVC\b/,"DVC","إعلان فيديو ديجيتال","Digital Video Commercial: نسخة الإعلان للسوشيال، أقصر وأحيانًا بمقاس طولي.","Digital Video Commercial: the social version, shorter and sometimes vertical."],
+ [/\bOOH\b/,"OOH","إعلانات الشوارع","Out Of Home: البيلبوردز، الأوتوبيسات، المترو. أي إعلان برّه البيت.","Out Of Home: billboards, buses, the metro. Any ad outside the home."],
+ [/\bJunior\b/,"Junior","مبتدئ","أول درجة بعد الـ intern، من سنة لتلات سنين خبرة.","The first rung after intern, one to three years of experience."],
+ [/\bSenior\b/,"Senior","خبير","درجة متقدمة، غالبًا بعد 4 أو 5 سنين، بيراجع شغل اللي تحته.","An advanced rung, usually after 4 or 5 years, reviewing the work of those below."],
+ [/\bIntern\b/,"Intern","متدرب","فترة تدريب بمرتب رمزي أو من غيره، الدخول أهم من المرتب.","A training period with a token salary or none; getting in matters more than the pay."],
+ [/Freelance|فريلانسر/i,"Freelance","عمل حر","شخص بيشتغل لحسابه على المشروع من غير ما يكون موظف في شركة.","Someone working for themselves per project, not employed by a company."],
+ [/Line Producer/,"Line producer","منتج الخط","المنتج اللي بيدير الميزانية اليومية والفريق على الأرض، تحت الـ Executive Producer.","The producer who runs the daily budget and crew on the ground, under the Executive Producer."],
+ [/Post Producer/,"Post producer","منتج ما بعد الإنتاج","اللي بينسق المونتير والألوان والصوت والجرافيكس مع الوكالة وشركة الإنتاج.","Coordinates the editor, color, sound and graphics with the agency and production house."],
+ [/Head of Production/,"Head of production","رئيس الإنتاج","أعلى منتج في الوكالة أو شركة الإنتاج، بيدير كل المنتجين.","The top producer at an agency or production house, managing all the producers."],
+ [/Client Services( Director)?/,"Client services","خدمة العملاء (في الوكالة)","القسم اللي فيه الأكونت مانجرز. مديره بيبقى فوق كل الأكونتس.","The department of account managers. Its director sits above all the accounts."],
+ [/\bStrategy\b|الاستراتيجي(ة)?/,"Strategy","الاستراتيجية","التفكير اللي قبل الفكرة: مين الجمهور، إيه المشكلة، إيه الإنسايت، إيه الرسالة.","The thinking before the idea: who the audience is, what the problem is, what the insight is, what the message is."],
+ [/\bECD\b/,"Executive Creative Director","المدير الإبداعي التنفيذي","أعلى من الـ CD، بيدير كل الكرييتيف دايركتورز في الوكالة.","Above the CD, runs all the creative directors in the agency."],
+ [/\bACD\b/,"Associate Creative Director","مساعد مدير إبداعي","الدرجة اللي قبل الـ CD مباشرة.","The rung just below CD."],
+ [/Account Executive/,"Account executive","تنفيذي حسابات","أول درجة في الأكونت، تحت الـ Account Manager.","The first rung in account, under the Account Manager."],
+ [/Production Assistant/,"Production assistant","مساعد إنتاج","أول درجة في الإنتاج، بيجري على كل حاجة.","The first rung in production, running after everything."],
+ [/Camera Operator/,"Camera operator","مشغل الكاميرا","اللي بيمسك الكاميرا فعليًا تحت إشراف الـ DOP.","The person physically operating the camera under the DOP."],
+ [/Second Unit Director/,"Second unit director","مخرج الوحدة التانية","مخرج بيصور لقطات ثانوية (مناظر، تفاصيل) بالتوازي مع المخرج الأساسي.","A director filming secondary shots (scenery, details) in parallel with the main director."],
+ [/Content Creator/,"Content creator","صانع محتوى","شخص بيعمل فيديوهات ومحتوى للسوشيال، غالبًا لوحده أو لفريق صغير.","Someone making videos and content for social, usually alone or in a small team."],
+ [/Sound Supervisor/,"Sound supervisor","مشرف الصوت","المسؤول الأول عن كل الصوت في المشروع.","The lead responsible for all sound on the project."],
+ [/VFX Supervisor/,"VFX supervisor","مشرف المؤثرات","المسؤول عن كل المؤثرات البصرية من التصوير للـ Post.","Responsible for all visual effects from shoot to post."],
+ [/Casting (Director|Coordinator|Assistant)/,"Casting director","مدير الكاستنج","اللي بيدير وكالة الكاستنج وبيختار المرشحين للمخرج.","Runs the casting agency and shortlists candidates for the director."],
+ [/Craft Media|Kino Films|One Stop Shop/,"Production house","شركة إنتاج مصرية","شركة إنتاج مصرية ظهرت في credits حملات على Ads of the World.","An Egyptian production house credited on campaigns on Ads of the World."],
+ [/الكومبارس|\bextras\b/i,"Extras","الكومبارس","الناس اللي في خلفية المشهد من غير كلام، بيديرهم الـ 3rd AD.","The people in the background of a scene with no lines, managed by the 3rd AD."],
+ [/\blayout\b/i,"Layout","التوزيع البصري","ترتيب العناصر (صورة، نص، لوجو) في التصميم.","The arrangement of elements (image, text, logo) in a design."]
+];
+const POSMAP={CD:["Creative Director","المدير الإبداعي"],EP:["Executive Producer","المنتج المنفذ"],DOP:["Director of Photography","مدير التصوير"],MD:["Managing Director","المدير العام"],AD:["Assistant Director / Art Director","مساعد مخرج (في الإنتاج) أو آرت دايركتور (في الوكالة)"],ADs:["Assistant Directors","مساعدين المخرج"],CW:["Copywriter","الكوبي رايتر"],"1st AD":["First Assistant Director","مساعد مخرج أول"],"2nd AD":["Second Assistant Director","مساعد مخرج تاني"],"3rd AD":["Third Assistant Director","مساعد مخرج تالت"],BTS:["Behind The Scenes","كواليس التصوير"],"Agency Producer":["Agency Producer","منتج الوكالة"],"Assistant Producer":["Assistant Producer","مساعد المنتج"],"Account Manager":["Account Manager","مدير الحساب"],Colorist:["Colorist","مصحح الألوان"],Editor:["Editor","المونتير"],Director:["Director","المخرج"],"Creative & Operations Director":["Creative & Operations Director","مدير الإبداع والتشغيل"]};
+const POSRE=/\b(1st AD|2nd AD|3rd AD|Creative & Operations Director|Agency Producer|Assistant Producer|Account Manager|CD|EP|DOP|MD|ADs|AD|CW|BTS)\b/;
+function termSpan(en,ar,x,txt){const s=document.createElement('span');s.className='term';s.tabIndex=0;s.dataset.en=en;s.dataset.ar=ar;s.dataset.x=x||'';s.textContent=txt;return s;}
+function applyTerms(root){if(!root)return;const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentElement;if(!p||p.closest('.term,script,style,input,.credits,#tip,h1,h2,.eyebrow,nav,.chip b,.ab,td.ab,.pill,.jstep,.bar'))return NodeFilter.FILTER_REJECT;return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;}});const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+nodes.forEach(n=>{let text=n.nodeValue;const frag=document.createDocumentFragment();let guard=0;
+while(text.length&&guard++<40){let best=null;
+ for(const g of GLOSS){const m=g[0].exec(text);if(m&&(best===null||m.index<best.i))best={i:m.index,len:m[0].length,en:g[1],ar:g[2],x:lang==='ar'?g[3]:g[4]};}
+ const pm=POSRE.exec(text);if(pm&&(best===null||pm.index<best.i)){const k=POSMAP[pm[1]];if(k)best={i:pm.index,len:pm[0].length,en:k[0],ar:k[1],x:t(UI.posNote)};}
+ if(!best){frag.appendChild(document.createTextNode(text));break;}
+ if(best.i>0)frag.appendChild(document.createTextNode(text.slice(0,best.i)));
+ frag.appendChild(termSpan(best.en,best.ar,best.x,text.slice(best.i,best.i+best.len)));text=text.slice(best.i+best.len);}
+if(text.length)frag.appendChild(document.createTextNode(text));n.replaceWith(frag);});}
+/* ---------- tooltip ---------- */
+const tip=document.getElementById('tip');let cur=null;
+function showTip(el){cur=el;const first=lang==='ar'?`<span class="en">${el.dataset.en}</span><span>· ${el.dataset.ar}</span>`:`<span>${el.dataset.en}</span><span class="en" dir="rtl">· ${el.dataset.ar}</span>`;tip.innerHTML=`<div class="h">${first}</div>${el.dataset.x?`<div class="x">${el.dataset.x}</div>`:''}`;tip.hidden=false;
+ const r=el.getBoundingClientRect(),sx=window.scrollX,sy=window.scrollY,tw=tip.offsetWidth,th=tip.offsetHeight;let left=r.left+sx+r.width/2-tw/2;left=Math.max(sx+12,Math.min(left,sx+document.documentElement.clientWidth-tw-12));let top=r.top+sy-th-8;if(r.top<th+12)top=r.bottom+sy+8;tip.style.left=left+'px';tip.style.top=top+'px';el.classList.add('on');}
+function hideTip(){if(cur)cur.classList.remove('on');cur=null;tip.hidden=true;}
+const noHover=()=>window.matchMedia('(hover:none)').matches;
+document.addEventListener('mouseover',e=>{const x=e.target.closest('.term');if(x&&x!==cur)showTip(x);});
+document.addEventListener('mouseout',e=>{const x=e.target.closest('.term');if(x&&!x.contains(e.relatedTarget)&&!noHover())hideTip();});
+document.addEventListener('focusin',e=>{const x=e.target.closest('.term');if(x)showTip(x);});
+document.addEventListener('focusout',e=>{if(e.target.closest('.term'))hideTip();});
+document.addEventListener('click',e=>{const x=e.target.closest('.term');if(x){if(cur===x)hideTip();else showTip(x);}else hideTip();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')hideTip();});
+window.addEventListener('scroll',()=>{if(cur&&noHover())hideTip();},{passive:true});
+/* ---------- render ---------- */
+const $=id=>document.getElementById(id);
+let curStep=0,curPos='cd';
+function render(){
+ const root=document.documentElement;root.setAttribute('lang',lang);$('wrap').dir=lang==='ar'?'rtl':'ltr';
+ $('langAr').setAttribute('aria-pressed',lang==='ar');$('langEn').setAttribute('aria-pressed',lang==='en');
+ document.title=lang==='ar'?'خريطة صناعة الإعلانات':'The Ad Industry Map';
+ const ids=['journey','map','rels','abbr','egypt','paths','quiz'];
+ $('hdr').innerHTML=`<span class="eyebrow">${t(UI.eyebrow)}</span><h1>${t(UI.title)}</h1><p class="lead">${t(UI.lead)}</p><p class="hint">${t(UI.hint).replace('{T}',`<span class="term" tabindex="0" data-en="${GLOSS[0][1]}" data-ar="${GLOSS[0][2]}" data-x="${lang==='ar'?GLOSS[0][3]:GLOSS[0][4]}">${t(UI.hintTerm)}</span>`)}</p><nav class="top">${t(UI.nav).map((n,i)=>`<a href="#${ids[i]}">${n}</a>`).join('')}</nav>`;
+ $('jhead').innerHTML=`<h2>${t(UI.jTitle)}</h2><p class="lead">${t(UI.jLead)}</p>`;
+ const js=$('jsteps');js.innerHTML='';STEPS.forEach((s,i)=>{const b=document.createElement('button');b.className='jstep';b.setAttribute('role','tab');b.id='jstep'+i;b.setAttribute('aria-selected',i===curStep);b.innerHTML=`<div class="n">${t(s.n)}</div><div class="t">${t(s.t)}</div><div class="s">${t(s.s)}</div>`;b.onclick=()=>showStep(i);js.appendChild(b);});showStep(curStep);
+ $('mhead').innerHTML=`<h2>${t(UI.mTitle)}</h2><p class="lead">${t(UI.mLead)}</p>`;
+ $('client').innerHTML=`<div class="cbox">${t(UI.client)}</div><span class="arrow">${t(UI.clientArrow)}</span>`;
+ const hs=$('houses');hs.innerHTML='';Object.entries(HOUSES).forEach(([k,h])=>{const d=document.createElement('div');d.className='house';d.style.setProperty('--hc',h.c);d.style.setProperty('--hs',h.s);d.innerHTML=`<h3>${t(h.name)} <small>${t(h.en)}</small></h3><p class="what">${t(h.what)}</p><div class="chips"></div>`;const chips=d.querySelector('.chips');P.filter(p=>p.h===k).forEach(p=>{const b=document.createElement('button');b.className='chip'+(p.ext?' ext':'');b.id='chip-'+p.id;b.setAttribute('aria-pressed',p.id===curPos);b.innerHTML=`<b>${lang==='ar'?p.name:p.name}</b><span class="ab term" tabindex="0" data-en="${p.name}" data-ar="${p.ar[0]}" data-x="${t(p.short)}">${p.ab}</span>`;b.onclick=()=>showPos(p.id,true);chips.appendChild(b);});hs.appendChild(d);});showPos(curPos,false);
+ $('rhead').innerHTML=`<h2>${t(UI.rTitle)}</h2><p class="lead">${t(UI.rLead)}</p>`;
+ const rb=$('relsBody');rb.innerHTML='';RELS.forEach(r=>{const d=document.createElement('div');d.className='rel';d.innerHTML=`<div class="pair"><span><span class="dot" style="--pc:${r.ac}"></span> ${t(r.a)}</span><span class="ar">↔</span><span><span class="dot" style="--pc:${r.bc}"></span> ${t(r.b)}</span></div><p>${t(r.t)}</p>`;rb.appendChild(d);});applyTerms(rb);
+ $('ahead').innerHTML=`<h2>${t(UI.aTitle)}</h2><p class="lead">${t(UI.aLead)}</p>`;$('abbrSearch').placeholder=t(UI.aPh);$('abbrHead').innerHTML=t(UI.aCols).map(c=>`<th>${c}</th>`).join('');renderAbbr($('abbrSearch').value);
+ $('ehead').innerHTML=`<h2>${t(UI.eTitle)}</h2><p class="lead">${t(UI.eLead)}</p>`;
+ const ec=$('ecards');ec.innerHTML='';EGYPT.forEach(c=>{const d=document.createElement('div');d.className='card';d.innerHTML=`<h3>${t(c.h)}</h3>${c.p?`<p>${t(c.p)}</p>`:''}${c.ul?`<ul>${c.ul.map(x=>`<li>${t(x)}</li>`).join('')}</ul>`:''}${c.credits?`<div class="credits">${c.credits}</div>`:''}`;ec.appendChild(d);});applyTerms(ec);
+ $('phead').innerHTML=`<h2>${t(UI.pTitle)}</h2><p class="lead">${t(UI.pLead)}</p>`;
+ const pb=$('pathsBody');pb.innerHTML='';PATHS.forEach(p=>{const d=document.createElement('div');d.className='path';d.style.setProperty('--pc',p.c);d.innerHTML=`<h3>${t(p.t)}</h3><div class="yrs">${t(p.y)}</div><ol>${p.l.map(x=>`<li>${t(x)}</li>`).join('')}</ol>`;pb.appendChild(d);});applyTerms(pb);
+ $('ptip').innerHTML=t(UI.pTip);applyTerms($('ptip'));
+ $('qhead').innerHTML=`<h2>${t(UI.qTitle)}</h2><p class="lead">${t(UI.qLead)}</p>`;renderQuiz();
+ $('foot').textContent=t(UI.foot);hideTip();
+}
+function showStep(i){curStep=i;[...$('jsteps').children].forEach((c,k)=>c.setAttribute('aria-selected',k===i));const s=STEPS[i];const jb=$('jbody');jb.innerHTML=`<h3>${t(s.h)}</h3><p>${t(s.body)}</p><ul>${s.pts.map(p=>`<li>${t(p)}</li>`).join('')}</ul>`;applyTerms(jb);}
+function showPos(id,scroll){const p=P.find(x=>x.id===id);if(!p)return;curPos=id;const h=HOUSES[p.h];document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.id==='chip-'+id));const d=$('detail');d.style.setProperty('--dc',h.c);
+ const sub=lang==='ar'?`${p.name} · ${p.ab}`:`${p.ar[0]} · ${p.ab}`;
+ d.innerHTML=`<div class="top"><div><span class="tag">${t(h.name)}${p.ext?' · '+t(UI.extTag):''}</span><h3>${t(p.ar)}</h3><div class="en">${sub}</div></div><span class="eyebrow">${t(p.short)}</span></div>
+<div class="grid"><div><h3 style="font-size:15px">${t(UI.does)}</h3><ul>${p.does.map(x=>`<li>${t(x)}</li>`).join('')}</ul><div class="tip"><b>${t(UI.forYou)}</b> ${t(p.tip)}</div></div>
+<div class="kv"><div><span class="k">${t(UI.withK)}</span>${t(p.with)}</div><div><span class="k">${t(UI.ladderK)}</span><div class="ladder">${p.ladder.map((l,i)=>`<span class="${i===p.cur?'cur':''}">${t(l)}</span>${i<p.ladder.length-1?'<i>→</i>':''}`).join('')}</div></div><div><span class="k">${t(UI.diffK)}</span>${t(p.diff)}</div></div></div>`;
+ applyTerms(d);hideTip();if(scroll&&window.innerWidth<760)d.scrollIntoView({behavior:'smooth',block:'start'});}
+function renderAbbr(f){const tb=document.querySelector('#abbrTable tbody');tb.innerHTML='';const q=(f||'').trim().toLowerCase();const pills=t(UI.pills);ABBR.filter(r=>!q||[r[0],r[1],r[2][0],r[2][1]].join(' ').toLowerCase().includes(q)).forEach(r=>{const tr=document.createElement('tr');tr.innerHTML=`<td class="ab">${r[0]}</td><td>${r[1]}${r[3]?`<span class="pill ${r[3]}">${pills[r[3]]}</span>`:''}</td><td>${t(r[2])}</td>`;tb.appendChild(tr);});if(!tb.children.length)tb.innerHTML=`<tr><td colspan="3" class="empty">${t(UI.aNone)}</td></tr>`;}
+$('abbrSearch').addEventListener('input',e=>renderAbbr(e.target.value));
+function renderQuiz(){const quiz=$('quizBody');quiz.innerHTML='';let score=0,answered=0;
+ QUIZ.forEach((q,qi)=>{const d=document.createElement('div');d.className='q';d.innerHTML=`<div class="qt">${qi+1}. ${t(q.q)}</div><div class="opts"></div><div class="fb" id="fb${qi}"></div>`;const opts=d.querySelector('.opts');q.o.forEach((o,oi)=>{const b=document.createElement('button');b.className='opt';b.id=`q${qi}o${oi}`;b.textContent=t(o);b.onclick=()=>{if(d.dataset.done)return;d.dataset.done='1';answered++;const ok=oi===q.a;if(ok)score++;b.classList.add(ok?'ok':'no');opts.children[q.a].classList.add('ok');const fb=$('fb'+qi);fb.textContent=(ok?t(UI.ok):t(UI.no))+t(q.e);applyTerms(fb);if(answered===QUIZ.length){const s=document.createElement('div');s.className='score';s.textContent=`${t(UI.score)}: ${score} ${t(UI.of)} ${QUIZ.length}`+(score===QUIZ.length?t(UI.s3):score>=4?t(UI.s2):t(UI.s1));quiz.appendChild(s);}};opts.appendChild(b);});quiz.appendChild(d);});applyTerms(quiz);}
+/* ---------- language + theme switches ---------- */
+function setLang(l){lang=l;try{localStorage.setItem('adMapLang',l);}catch(e){}render();}
+$('langAr').onclick=()=>setLang('ar');$('langEn').onclick=()=>setLang('en');
+function setTheme(th){const r=document.documentElement;if(th==='auto')r.removeAttribute('data-theme');else r.setAttribute('data-theme',th);['Light','Auto','Dark'].forEach(k=>$('th'+k).setAttribute('aria-pressed',k.toLowerCase()===th));try{localStorage.setItem('adMapTheme',th);}catch(e){}}
+$('thLight').onclick=()=>setTheme('light');$('thAuto').onclick=()=>setTheme('auto');$('thDark').onclick=()=>setTheme('dark');
+(function(){let l='ar',th='auto';try{l=localStorage.getItem('adMapLang')||l;th=localStorage.getItem('adMapTheme')||th;}catch(e){}
+ if(location.hash==='#en')l='en';if(location.hash==='#ar')l='ar';
+ if(th!=='auto')setTheme(th);lang=(l==='en')?'en':'ar';render();})();
+</script>
+
+</body>
+</html>
